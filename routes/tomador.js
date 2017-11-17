@@ -1,32 +1,34 @@
 var express = require('express');
+var router = express.Router();
 
-var app = express();
 
 //POST (create)
-app.post('/tomador', function(req, res){
-	
+router.post('/tomador', function(req, res){
+	console.log('post');
 });
 
 
 //GET (ready)
-app.get('/tomador', function(req, res){
-
+router.get('/tomador', function(req, res){
+	console.log('get all');
 });
 
 
 //GET by ID (ready)
-app.get('/tomador/:id', function(req, res){
-
+router.get('/tomador/:id', function(req, res){
+	console.log('get by id');
 });
 
 
 //PUT by ID (update)
-app.put('/tomador/:id', function(req, res){
-
+router.put('/tomador/:id', function(req, res){
+	console.log('put by id');
 });
 
 
 //DELETE by ID (remover)
-app.delete('/tomador/:id', function(req, res){
-
+router.delete('/tomador/:id', function(req, res){
+	console.log('delete');
 });
+
+module.exports = router;
