@@ -1,17 +1,15 @@
 'use strict';
 
+require('./config/db/config');
 const express = require('express');
-
-const routes = require('./routes/index');
-const tomador = require('./routes/tomador');
-const UsersAPI = require('./modules/Users');
-
 const app = express();
 
-app.use('/', routes);
-app.use('/tomador', tomador);
+const RotaAPI = require('./routes/index');
+const Tomador = require('./routes/tomador');
 
-app.use('/api/users', UsersAPI);
+
+app.use('/', RotaAPI);
+app.use('/tomador', Tomador);
 
 
 app.set('port', process.env.PORT || 3000);
